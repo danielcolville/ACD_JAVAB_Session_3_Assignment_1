@@ -15,10 +15,10 @@ public class VarScope {
 		VarScope a=new VarScope();//instance variable only in scope after object created
 		System.out.println("Instance variable after object created in main"+a.number);
 		a.instMethod();
-		cVarHidden();
+		iVarHidden();
 		
 	}
-	public static void cVarHidden() {
+	public static void iVarHidden() {
 		System.out.println("Instance not visible in static method");
 		System.out.println("Static var in static method:"+objCount);
 	}
