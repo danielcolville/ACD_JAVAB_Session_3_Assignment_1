@@ -10,19 +10,21 @@ public class VarScope {
 		objCount++;
 	}
 	public static void main(String [] args) {
-		System.out.println(objCount);
-		VarScope a=new VarScope();
-		System.out.println(a.number);
-		a.classMethod();
+		//static variable is in scope anywher
+		System.out.println("Static var equals: "+objCount);
+		VarScope a=new VarScope();//instance variable only in scope after object created
+		System.out.println("Instance variable after object created in main"+a.number);
+		a.instMethod();
+		cVarHidden();
 		
 	}
 	public static void cVarHidden() {
-		//System.out.println(a.number);
-		System.out.println(objCount);
+		System.out.println("Instance not visible in static method");
+		System.out.println("Static var in static method:"+objCount);
 	}
-	public void classMethod() {
-		System.out.println(objCount);
-		System.out.println(number);
+	public void instMethod() {
+		System.out.println("Static variable in instance method: "+ objCount);
+		System.out.println("Instance variable in instance method: "+number);
 	}
 	
 }
